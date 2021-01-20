@@ -1,6 +1,7 @@
 package com.experiment.android.prototype.paging.ui
 
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.experiment.android.prototype.paging.model.Repo
@@ -8,7 +9,7 @@ import com.experiment.android.prototype.paging.model.Repo
 /**
  * Adapter for the list of repositories.
  */
-class ReposAdapter : ListAdapter<Repo, RepoViewHolder>(REPO_COMPARATOR) {
+class ReposAdapter : PagingDataAdapter<Repo, RepoViewHolder>(REPO_COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
         return RepoViewHolder.create(parent)
